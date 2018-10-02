@@ -1,0 +1,6 @@
+<html prefix="og: http://ogp.me/ns#">
+
+<meta property="og:title" content="Christopher's Portfolio" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />

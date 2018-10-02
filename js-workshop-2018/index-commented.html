@@ -1,0 +1,318 @@
+<!--
+    Welcome to Upsilon Pi Epsilon's Web Development Workshop!
+    Throughout this document, I (Christopher Rodriguez) will be
+    guiding you along the meanings and reasonings behind the code below.
+    
+    Hopefully you'll have learned something new after this little digital
+    walkthrough!
+     _______     _______       ___________________       __________________
+    /       \   /       \     /                   \     /                  \
+    |       |   |       |     |                   |     |                  |
+    \__     |   |     __/     \_       ___       _/     \_       ______    |
+       \    |   |    /          |     |   |     |         |     |      \___/
+        \    \_/    /           |     |   |     |         |      \___
+         \         /            |     |   |     |         |          \
+          \       /             |     |   |     |         |      ____/
+           |     |              |     |   |     |         |     |      ____
+           |     |             _|     |   |     |_       /      |_____/    \
+          /       \           /       |   |       \     /                  |
+          |       |           |       /   |       /     |                  |
+          \_______/           \______/    \______/      \__________________/
+          
+          
+    The following code also contains a few fixes when compared to the file
+    created during session 1. The fixes are as follows:
+    
+        - Images have been added to the img folder
+        - Images in the html now point to actual images stored in the
+          img folder
+        - A resource folder was added
+        
+    
+-->
+
+
+<!--
+    So here's where our document begins, and funnily enough, it's not
+    with the <html> tag. Instead, we've started with the DOCTYPE.
+    DOCTYPE in earlier versions of HTML were used to help tell web
+    browsers what version of HTML was being used, since HTML4 was 
+    split into a set of both strict and lenient rules for writing
+    HTML.
+    
+    As of HTML5, there isn't a split between versions, so we simply write
+    <!DOCTYPE html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<!--The head tag is where any non-visible information about our page is stored-->
+<head>
+    <meta charset="UTF-8">
+    <!--
+      The title tag here is fairly self explanatory. Whatever's here shows
+      up in the title bar of the web browser and as the title of the tab.
+    -->
+    <title>Christopher's Portfolio</title>
+    <!--
+     The link tags here are used to create a link between this page and the 
+     stylesheets it uses.
+     
+     Below we have a remote stylesheet for our fonts, a locally hosted stylesheet
+     for our CSS reset, and a locally hosted stylesheet for our page styling.
+     
+     The CSS reset file (reset.css) is necessary because web browsers like to apply 
+     their own default styling to HTML and that styling can vary between browsers.
+     Resetting every styling on the page simplifies our design process by eliminating any 
+     possible issues we might encounter in the future when styling because we have 
+     to explicity define everything we want to style. 
+    -->
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:700|Josefin+Sans:300,400|Oswald:700" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!--
+     This line is for making sure mobile devices will render the page and the proper size
+     and not just show a zoomed out version.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<!--
+The body is where our webpage is actually rendered. Anything inside the body tag 
+is visible to the web browser.
+-->
+<body>
+    <!-- 
+        Here is where our webpage's content actually begins. Below, we createad a header tag.
+        The header tag, like most tags in HTML, have no special properties and are designed to
+        be semantic. In doing so, we give out HTML meaning by applying tags that have meaning.
+        
+        In this case, a header tag is the most appropriate for what we want, since we can consider
+        the area which houses our navigation and title as a header for our page.
+        If you'd like to read more on the different kinds of semantic tags available, you can go
+        to http://html5doctor.com/element-index/ and check it out for yourself!
+        
+        You'll also notice the tag has an attribute called "class" with a value of "sidebar".
+        In HTML we can set identifiers for CSS to select things semantically as well. Instead of
+        going through a complex chain of CSS selection, we can give our elements classes to both
+        better define them, as well as to assist in styling.  
+    -->
+    <header class="sidebar">
+        <!--
+            Here's our first encounter of a div tag. "Div" is short for division and used to be
+            the tag of choice in HTML4 before we had tags like "header", "footer", and "nav".
+            
+            Now, in HTML5, the div tag should be used when trying to group elements for styling
+            or as a fallback container for whenever none of the semantic HTML tags seem appropriate.  
+        -->
+        <div>
+            <!--
+                Here we have our heading tag, listed as "h1". Just like in a Word document, HTML can
+                have headings as well. The available tags go from h1 to h6, with h1 being the largest
+                heading. Since our name is our most prominent title for our webpage, it makes sense to
+                use the h1 tag here.
+                
+                You'll also notice the span tag inside of the heading. The span tag allows us to style 
+                things in a way similar to the div tag, but it's meant more for sontent inside of an 
+                element, like text, instead of groups of content. This is why my first name is wrapped
+                with the span tag.   
+            -->
+            <h1><span>Christopher</span> <br> Rodriguez</h1>
+            <!--
+                Below, we have the img (short for 'image') tag. The img tag is fairly self explanatory, as it lets us
+                embed an image within our webpage. We can do so by setting the "src" attribute to the
+                location of where the image is located. In this case, the location we're pointing to is
+                inside of our "img" folder, where we are going to store our images.
+                
+                The "alt" attribute is used to describe the image we are embedding. In the event that the
+                image can't be loaded, the browser will show the text instead as a placeholder for the image
+                that should have loaded. Assistive technologies, like screen readers, also use the attributes 
+                to help people with disabilities navigate webpages.
+            -->
+            <img src="img/chris.jpg" alt="Picture of Christopher Rodriguez">
+        </div>
+        <!--
+            Now, we've reached the nav tag. Just like the header tag, the nav tag is semantic and has
+            no special usage, but it is still best practice to use nav tags wherever we are going to 
+            place our navigation items.
+            
+            You can also see that there is a ul and a set of li tags. The ul tag stands for "Unordered
+            list" and the li tag stands for "list items". There are also ol tags for "Ordered lists". Just 
+            like in word documents, we can have lists in HTML. An example of an unordered list is a bulleted
+            list, whereas an ordered list could be numbers counting from 1 or roman numerals, or even letters.
+        -->
+        <nav>
+            <ul>
+                <!--
+                    Inside the li tags we see what are called "anchor" tags, or a tags for short. These a tags
+                    are what make up all the links we see on the web. For example, if we wanted the text "Google"
+                    to link to google.com, we would write it as an anchor tag like so:
+                       
+                        <a href="http://google.com">Google</a>
+                        
+                    When the webpage is rendered, all we would see would be the word "Google" and the ability to
+                    click on it to go to google.com. This works for anything the browser can access. Whether it's 
+                    another webpage, an image, or a file, if the browser can access it, you can link to it.
+                    
+                    The a tag isn't just for linking to pages or documents. As you can see below, we're linking to
+                    "#about". This actually a section of the page, identified by the "id" attribute. When you click
+                    on this link, the brwoser will jump to the part of the page where the selected section begins.
+                    
+                    We'll go into more detail about the "id" attribute below.
+                -->
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--
+        So, we've finally gone past our header, and now we've reached the section tag. The section tag is typically
+        used for breaking a webpage into self-standing parts. Since none of the content inside of the following sections
+        interacts with eachother, they're considered unique sections, and are labeled as such.
+        
+        You'll also notice the "id" attribute here. Above, we talked about how the id attribute was used to link to the
+        sections below. While this is one of the reasosn for using the id attribute, it's main usage is similar to that
+        of the class attribute: better selection via CSS.
+        
+        Similar to the class attribute, the id attribute is typically used for CSS selection. In CSS, selecting this
+        section with the id "hero" would look like this:
+        
+            #hero
+        
+        In CSS, selecting an id is prefixed with the # symbol. One thing to note about the id in comaprison to class, is 
+        that while you can have several classes in the class attribute, the id attribute only supports one. When you think 
+        about an id, it makes sense: Student IDs are unique identifiers, since no two students should have the same number.
+        It's with that ideology that an id should be unique in HTML, because it should only relate to one unique element.
+        
+    -->
+    <section id="hero" class="page">
+       <!--
+            --A Bit of an Interjection--
+            In the original workshop, this tag didn't appear, and mainly it was because I had forgotten the need
+            for its existence. Without this tag here, we won't be able to apply special CSS properties to the 
+            background image while leaving our text headings unaffected. This div will essentially hold what is t obe the background of the hero image
+        -->
+        <div class="background spacer"></div>
+        <div>
+            <span>This is my</span>
+            <span>personal</span>
+            <span>site.</span>
+            <span>Welcome.</span>
+        </div>
+    </section>
+    <!--
+        This element here is going to work as a special spacer between our hero cover and our content when we get our CSS
+        completed. For now, it's just a simple div with the class "spacer".
+    -->
+    <div class="spacer"></div>
+    <!--
+        In this section tag we see a new kind of tag, the article tag. The article tag is designed to hold information
+        that could be read on its own and still make sense. For our webpage, we've wrapped the "About Us" section where
+        we actually write about ourselved in article tags.
+        
+        You also see that there's p tags inside of the article tag. The p tag (which stands for paragraph) is designed
+        to house paragraphs of text. Whenever we start a new paragraph, the new paragraph should start inside of a new
+        p tag. It should be noted that paragraphs should only contain links, bold, itallics, spans, and any other type 
+        of tag used for styling. Placing an image or anotehr p tag inside of a p tag shouldn't be done, since it's 
+        considered bad practive, and sometime browsers will attempt to correct this by breaking the tag apart.
+    -->
+    <section id="about" class="page">
+        <h1>About Me</h1>
+        <article>
+            <img src="img/chris.jpg" alt="Picture of Christopher Rodriguez">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+        </article>
+    </section>
+    <!--
+        Previously, we saw an unordered list being used for the navigation items. Below, we can see an unordered
+        list being used to group a paragraph and an image together. This is both valid, and a very valid use of the
+        ul and li tags. The items contained inside of each tag are fairly identical in terms of their tag layout, and
+        all that ends up changing is the content inside the p tag and the src attribute for the img tags.
+        
+        The other two sections follow a similar approach, which the "Education" section changing things slightly
+        with the added div element to group the paragraph and image tags.
+        
+        This is the end of our little walkthough on HTML. I hope you've learned something new! During session 2, we're 
+        going to finalize the CSS for our webpage so it looks presentable and similar to our pre-rendered design.  
+        
+        Edit: The images are stored inside a div of class "image", because for what we want to accomplish, we require
+        having a container for our styling.
+    -->
+    <section id="skills" class="page">
+       <h1>Skills</h1>
+        <ul class="list">
+            <li>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <div class="image">
+                    <img src="img/html5.png" alt="HTML5 Logo">
+                </div>
+            </li>
+            <li>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="image">
+                    <img src="img/css3.png" alt="CSS3 Logo">
+                </div>
+            </li>
+            <li>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <div class="image">
+                    <img src="img/placeholder.png" alt="Placeholder Image">
+                </div>
+            </li>
+            <li>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <div class="image">
+                    <img src="img/placeholder.png" alt="Placeholder Image">
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section id="projects" class="page">
+        <h1>Projects</h1>
+        <ul class="list">
+            <li>
+                <div class="image">
+                    <img src="img/placeholder.png" alt="Placeholder Image">
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            </li>
+            <li>
+                <div class="image">
+                    <img src="img/placeholder.png" alt="Placeholder Image">
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            </li>
+            <li>
+                <div class="image">
+                    <img src="img/placeholder.png" alt="Placeholder Image">
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            </li>
+            <li>
+                <div class="image">
+                    <img src="img/placeholder.png" alt="Placeholder Image">
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            </li>
+        </ul>
+    </section>
+    <section id="education" class="page">
+        <h1>Education</h1>
+        <ul class="list">
+            <li>
+                <div>
+                    <h2>Florida International University</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="image">
+                    <img src="img/FIULogo.png" alt="FIU Logo">
+                </div>
+            </li>
+        </ul>
+    </section>    
+</body>
+</html>
