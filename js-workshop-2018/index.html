@@ -3,20 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Christopher's Portfolio</title>
+    <title>My Portfolio</title>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:700|Josefin+Sans:300,400|Oswald:700" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"> </script> 
-    <script src = "js/github.js" > </script> 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+    <script src="js/github.js"> </script>
 </head>
 
 <body>
     <header class="sidebar">
         <div>
-            <h1><span>Christopher</span> <br> Rodriguez</h1>
-            <img src="img/chris.jpg" alt="Picture of Christopher Rodriguez">
+            <h1><span>Your</span> <br> Name</h1>
+            <!-- Link to your picture -->
+            <!-- <img src=""> -->
         </div>
         <nav>
             <ul>
@@ -41,7 +42,8 @@
     <section id="about" class="page">
         <h1>About Me</h1>
         <article>
-            <img src="img/chris.jpg" alt="Picture of Christopher Rodriguez">
+            <!-- Link to your picture -->
+            <img src="" alt="your picture">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
@@ -158,22 +160,19 @@
 
     </section>
 </body>
-<script type="text/javascript" >
+<script type="text/javascript">
     const username = 'carloslahrssen';
     const listRepos = document.getElementById('list-repos');
 
     getGitHubRepos(username)
-    .then(res => {
-        const firstFiveRepos = res.data.slice(0, 5);
-        firstFiveRepos.forEach(repo => {
-            let item = document.createElement('li');
-            item.appendChild(document.createTextNode(repo.name));
-            listRepos.appendChild(item);
-        });
-    })
-    
-    
-
+        .then(res => {
+            const firstFiveRepos = res.data.slice(0, 5);
+            firstFiveRepos.forEach(repo => {
+                let item = document.createElement('li');
+                item.appendChild(document.createTextNode(repo.name));
+                listRepos.appendChild(item);
+            });
+        })
 </script>
 
 </html>

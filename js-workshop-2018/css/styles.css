@@ -239,6 +239,7 @@ section.page:not(#hero) {
 
 #repos {
   background: wheat;
+  color: black;
 }
 
 @media (min-width: 1921px) {
